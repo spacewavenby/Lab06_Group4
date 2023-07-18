@@ -3,8 +3,8 @@
 
 
 def encode(password):
-    print("1. Encode the password \n2. Decode the password")
-    user_choice = int(input("Encode or Decode (1 or 2): "))
+    # print("1. Encode the password \n2. Decode the password")
+    # user_choice = int(input("Encode or Decode (1 or 2): "))
     new_pass = ''
     pass_val = 0
     for num in password:
@@ -18,7 +18,40 @@ def encode(password):
 
 
 def decode(new_pass):
-    pass
+    dec_password = ''
+
+    for i in new_pass:
+        if i == '0':
+            i='7'
+            dec_password = dec_password + i
+        if i == '1':
+            i='8'
+            dec_password = dec_password + i
+        if i == '2':
+            i='9'
+            dec_password = dec_password + i
+        if i == '3':
+            i='0'
+            dec_password = dec_password + i
+        if i == '4':
+            i='1'
+            dec_password = dec_password + i
+        if i == '5':
+            i='2'
+            dec_password = dec_password + i
+        if i == '6':
+            i='3'
+            dec_password = dec_password + i
+        if i == '7':
+            i='4'
+            dec_password = dec_password + i
+        if i == '8':
+            i='5'
+            dec_password = dec_password + i
+        if i == '9':
+            i='6'
+            dec_password = dec_password + i
+    return dec_password
 
 
 def main():
@@ -34,7 +67,8 @@ def main():
             print('Your password has been encoded and stored!')
             print()
         elif user_choice == 2:
-            pass
+            orig_password = decode(new_pass)
+            print('The encoded password is', new_pass, ', and the original pasword is', orig_password + '.')
         elif user_choice == 3:
             break
 
