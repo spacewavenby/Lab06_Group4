@@ -17,7 +17,7 @@ def encode(password):
     return new_pass
 
 
-def decode(enc_password):
+def decode(new_pass):
     pass
 
 
@@ -30,7 +30,7 @@ def main():
         user_choice = int(input("Please enter an option: "))
         if user_choice == 1:
             password = str(input("Please enter your password to encode: "))
-            enc_password = encode(password)
+            new_pass = encode(password)
             print('Your password has been encoded and stored!')
             print()
         elif user_choice == 2:
