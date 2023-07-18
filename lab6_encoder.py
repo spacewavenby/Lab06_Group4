@@ -2,7 +2,7 @@
 # Encoder for lab6
 
 
-def pw_encoder(password):
+def encode(password):
     print("1. Encode the password \n2. Decode the password")
     user_choice = int(input("Encode or Decode (1 or 2): "))
     new_pass = ''
@@ -17,18 +17,26 @@ def pw_encoder(password):
     return new_pass
 
 
-def pw_decoder(password):
+def decode(enc_password):
     pass
 
 
 def main():
-    password = str(input("Please enter a string of 8 numbers: "))
-    print("1. Encode the password \n2. Decode the password")
-    user_choice = int(input("Encode or Decode (1 or 2): "))
-    if user_choice == 1:
-        print(pw_encoder(password))
-    elif user_choice == 2:
-        pass
+    while True:
+        print("Menu")
+        print('-------------')
+        print("1. Encode \n2. Decode \n3. Quit")
+        print()
+        user_choice = int(input("Please enter an option: "))
+        if user_choice == 1:
+            password = str(input("Please enter your password to encode: "))
+            enc_password = encode(password)
+            print('Your password has been encoded and stored!')
+            print()
+        elif user_choice == 2:
+            pass
+        elif user_choice == 3:
+            break
 
 if __name__ == '__main__':
     main()
